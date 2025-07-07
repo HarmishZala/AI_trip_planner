@@ -17,9 +17,8 @@ if "messages" not in st.session_state:
 st.header("Plan Your Trip with AI")
 
 with st.form(key="query_form",clear_on_submit=True):
-    submit_button =st.form_submit_button("Submit")
     user_input =st.text_input("Enter your travel query:", placeholder="e.g. Where should I go for a vacation?")
-
+    submit_button =st.form_submit_button("Submit")
 if submit_button and user_input.strip():
     try:
         with st.spinner("Processing your request..."):
