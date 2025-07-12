@@ -10,9 +10,10 @@
 
 ## 🌟 Introduction
 
-**AI Trip Planner Agent** is an intelligent travel planning assistant powered by advanced LLMs, LangChain, and real-time APIs. It generates personalized, budget-aware, and context-rich travel itineraries for any destination, combining both popular and offbeat experiences. 
+**AI Trip Planner Agent** is an intelligent travel planning assistant powered by advanced LLMs, LangChain, and real-time APIs. It generates personalized, budget-aware, and context-rich travel itineraries for any destination, combining both popular and offbeat experiences.
 
-### **Key Highlights**
+### Key Highlights
+
 - 🔗 Integrates with real-time APIs (weather, currency, places, etc.)
 - 🧠 Powered by LangChain and LLMs for smart reasoning
 - 💸 Budget-aware, with live cost breakdowns and currency conversion
@@ -25,23 +26,31 @@
 ## 🏗️ Architecture
 
 ```mermaid
-graph TD
-  A([User Prompt]) --> B[[AI Trip Planner Agent]]
+flowchart TD
+    A([User Prompt])
+    B([AI Trip Planner Agent])
+    C([LLM (Groq or OpenAI)])
+    I([Response Generator])
+    J([User Output])
 
-  subgraph LangChain Tools
-    D1[Weather API]
-    D2[Currency API]
-    D3[Google Places and Foursquare]
-    D4[Tavily Search]
-  end
+    subgraph LangChain Tools
+        D1([Weather API])
+        D2([Currency API])
+        D3([Google Places & Foursquare])
+        D4([Tavily Search])
+    end
 
-  B --> C[[LLM (Groq or OpenAI)]]
-  B --> D1
-  B --> D2
-  B --> D3
-  B --> D4
-  B --> I[[Response Generator]]
-  I --> J([User Output])
+    A --> B
+    B --> C
+    B --> D1
+    B --> D2
+    B --> D3
+    B --> D4
+    B --> I
+    I --> J
+```
+
+---
 
 ## 🚀 Features
 
@@ -57,30 +66,38 @@ graph TD
 
 ## 🏁 Getting Started
 
-### 1. **Clone the Repository**
+### 1. Clone the Repository
+
 ```sh
 git clone https://github.com/harmish/agentic_ai_project.git
 cd agentic_ai_project/AI_trip_planner
 ```
 
-### 2. **Set Up the Environment**
+### 2. Set Up the Environment
+
 Install [uv](https://github.com/astral-sh/uv) (fast Python package manager):
+
 ```sh
 pip install uv
 ```
+
 Create and activate a virtual environment:
+
 ```sh
 uv venv env --python cpython-3.10.18-windows-x86_64-none
 .\env\Scripts\activate
 ```
 
-### 3. **Install Dependencies**
+### 3. Install Dependencies
+
 ```sh
 uv pip install -r requirements.txt
 ```
 
-### 4. **Configure API Keys**
+### 4. Configure API Keys
+
 Create a `.env` file in the root directory with your API keys:
+
 ```env
 GROQ_API_KEY="your_groq_api_key"
 GOOGLE_API_KEY="your_google_api_key"
@@ -90,7 +107,9 @@ TAVILY_API_KEY="your_tavily_api_key"
 OPENWEATHERMAP_API_KEY="your_openweathermap_api_key"
 EXCHANGE_RATE_API_KEY="your_exchange_rate_api_key"
 ```
+
 **Get your API keys:**
+
 - [Groq](https://console.groq.com/)
 - [Google Cloud](https://console.cloud.google.com/apis/credentials)
 - [Google Places](https://developers.google.com/maps/documentation/places/web-service/get-api-key)
@@ -99,14 +118,16 @@ EXCHANGE_RATE_API_KEY="your_exchange_rate_api_key"
 - [OpenWeatherMap](https://home.openweathermap.org/api_keys)
 - [ExchangeRate](https://www.exchangerate-api.com/)
 
-### 5. **Run the Application**
+### 5. Run the Application
 
 **Streamlit UI:**
+
 ```sh
 streamlit run streamlit_app.py
 ```
 
 **FastAPI Backend:**
+
 ```sh
 uvicorn main:app --reload --port 8000
 ```
@@ -119,6 +140,7 @@ uvicorn main:app --reload --port 8000
 `Plan me a trip to Mumbai under 80000 rs`
 
 **Agent Output:**
+
 ```
 🌍 AI Travel Plan
 # Generated: 2025-07-12 at 14:44  
