@@ -33,7 +33,7 @@ flowchart TD
     I([Response Generator])
     J([User Output])
 
-    subgraph LangChain Tools
+    subgraph LangChain_Tools
         D1([Weather API])
         D2([Currency API])
         D3([Google Places & Foursquare])
@@ -75,7 +75,7 @@ cd agentic_ai_project/AI_trip_planner
 
 ### 2. Set Up the Environment
 
-Install [uv](https://github.com/astral-sh/uv) (fast Python package manager):
+Install [uv](https://github.com/astral-sh/uv):
 
 ```sh
 pip install uv
