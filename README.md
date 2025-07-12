@@ -26,18 +26,18 @@
 ## 🏗️ Architecture
 
 ```mermaid
-flowchart TD
-    A([User Prompt])
-    B([AI Trip Planner Agent])
-    C([LLM (Groq or OpenAI)])
-    I([Response Generator])
-    J([User Output])
+graph TD
+    A[User Prompt]
+    B[AI Trip Planner Agent]
+    C[LLM (Groq or OpenAI)]
+    I[Response Generator]
+    J[User Output]
 
-    subgraph LangChain_Tools
-        D1([Weather API])
-        D2([Currency API])
-        D3([Google Places & Foursquare])
-        D4([Tavily Search])
+    subgraph LangChain Tools
+        D1[Weather API]
+        D2[Currency API]
+        D3[Google Places & Foursquare]
+        D4[Tavily Search]
     end
 
     A --> B
