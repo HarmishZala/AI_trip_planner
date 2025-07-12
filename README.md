@@ -27,11 +27,11 @@
 ```mermaid
 graph TD
   A[User Prompt] --> B[AI Trip Planner Agent]
-  B --> C[LLM (Groq/OpenAI)]
+  B --> C[LLM (Groq or OpenAI)]
   B --> D[LangChain Tools]
   D --> E[Weather API]
   D --> F[Currency API]
-  D --> G[Google Places / Foursquare]
+  D --> G[Google Places and Foursquare]
   D --> H[Tavily Search]
   B --> I[Response Generator]
   I --> J[User Output]
