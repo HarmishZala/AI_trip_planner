@@ -37,6 +37,7 @@ graph TD
     D --> H["Tavily Search"]
     B --> I["Response Generator"]
     I --> J["User Output"]
+```
 ---
 
 ## 🚀 Features
