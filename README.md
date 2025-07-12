@@ -24,17 +24,30 @@
 
 ## 🏗️ Architecture
 
+
 ```mermaid
 graph TD
-    A[User Prompt] -->|Streamlit UI / API| B[AI Trip Planner Agent]
-    B --> C[LLM (Groq/OpenAI)]
-    B --> D[LangChain Tools]
-    D --> E[Weather API]
-    D --> F[Currency API]
-    D --> G[Google Places / Foursquare]
-    D --> H[Tavily Search]
-    B --> I[Response Generator]
-    I --> J[User Output]
+    A[User Prompt]
+    B[AI Trip Planner Agent]
+    C[LLM (Groq or OpenAI)]
+    I[Response Generator]
+    J[User Output]
+
+    subgraph LangChain Tools
+        D1[Weather API]
+        D2[Currency API]
+        D3[Google Places & Foursquare]
+        D4[Tavily Search]
+    end
+
+    A --> B
+    B --> C
+    B --> D1
+    B --> D2
+    B --> D3
+    B --> D4
+    B --> I
+    I --> J
 ```
 
 ---
@@ -176,4 +189,4 @@ This plan is designed to stay within your budget of ₹80,000 while providing a 
 
 ---
 
-Enjoy planning your next adventure with the AI Trip Planner Agent! 🚀
+Enjoy planning your next adventure with the AI Trip Planner Agent!
