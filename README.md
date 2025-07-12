@@ -43,10 +43,6 @@ graph TD
   B --> I[[Response Generator]]
   I --> J([User Output])
 
-```
-
----
-
 ## 🚀 Features
 
 - **Personalized Itineraries:** Custom plans for any city, duration, and budget
