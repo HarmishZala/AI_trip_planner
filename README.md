@@ -26,7 +26,7 @@
 
 ```mermaid
 graph TD
-    A[User Prompt] -->|Streamlit UI / API| B[AI Trip Planner Agent]
+    A[User Prompt] --> B[AI Trip Planner Agent]
     B --> C[LLM (Groq/OpenAI)]
     B --> D[LangChain Tools]
     D --> E[Weather API]
